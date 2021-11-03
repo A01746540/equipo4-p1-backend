@@ -9,14 +9,17 @@ No permite duplicados y si lo intentas se incrementa el contador
 
 POST
 ```
-http://localhost:8084/canciones/postAgregarCancion
+http://localhost:8084/canciones/agregarCancion
 ```
 ```
 {
-    "ciudad":"Washington DC",
-    "pais":"EEUU",
-    "descripcion":"Monumento Washington",
-    "contador":1
+    "titulo":"Asinanona",
+    "duracion":"120",
+    "album":"Asinanona",
+    "artista":"Redimi2",
+    "genero":"rap",
+    "anio":"2019",
+    "imagen":"asnsakjsa"
 }
 ```
 ### Para obtener la lista de ciudades POR PAIS
