@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize")
-    // const { aplicarRelaciones } = require('./relations')
+const { aplicarRelaciones } = require('./relations')
 
 const sequelize = new Sequelize('AlexisyMaxine', 'user4', 'root', {
     dialect: 'mysql',
@@ -10,13 +10,17 @@ const sequelize = new Sequelize('AlexisyMaxine', 'user4', 'root', {
     }
 })
 
-// const modelDefiners = [
-//     require('../models/ciudades'),
-// ]
+const modelDefiners = [
+    require('../models/canciones'),
+    require('../models/libros'),
+    require('../models/listas_reproduccion'),
+    require('../models/lista_canciones'),
+    require('../models/lista_libros'),
+]
 
-// for (const modelDefiner of modelDefiners) {
-// modelDefiner(sequelize)
-// }
+for (const modelDefiner of modelDefiners) {
+    modelDefiner(sequelize)
+}
 
-// aplicarRelaciones(sequelize)
+aplicarRelaciones(sequelize)
 module.exports = sequelize

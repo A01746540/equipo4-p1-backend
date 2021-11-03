@@ -1,10 +1,18 @@
 const express = require('express')
 const app = express();
 const sequelize = require('./utils/database')
-    // const ciudadesRoutes = require('./routes/ciudades')
+const cancionRoutes = require('./routes/canciones')
+const libroRoutes = require('./routes/libros')
+const listareproduccionRoutes = require('./routes/listas_reproduccion')
+const listacancionRoutes = require('./routes/lista_canciones')
+const listalibroRoutes = require('./routes/lista_libros')
 
 app.use(express.json())
-    // app.use('/ciudades', ciudadesRoutes);
+app.use('/canciones', cancionRoutes);
+app.use('/libros', libroRoutes);
+app.use('/listareproduccion', listareproduccionRoutes);
+app.use('/listacanciones', listacancionRoutes);
+app.use('/listalibros', listalibroRoutes);
 
 sequelize.sync()
     .then(
