@@ -4,8 +4,7 @@
 
 ## Instrucciones para probarlo
 
-### Para crear un objeto
-No permite duplicados y si lo intentas se incrementa el contador
+### Para CANCIONES
 
 ### Para obtener canciones:
 GET
@@ -108,5 +107,76 @@ http://localhost:8084/canciones/obtenerCancionPorGenero
 ```
 {
     "genero":"rap"
+}
+```
+
+
+### Para LIBROS
+
+### Para obtener libros:
+GET
+```
+http://localhost:8084/libros/obtenerLibros
+```
+```
+{
+
+}
+```
+### Para obtener una sola libro:
+GET
+```
+http://localhost:8084/libros/obtenerLibro
+```
+```
+{
+    "id":"1"
+}
+```
+### Para agregar una libro:
+POST
+```
+http://localhost:8084/libros/agregarLibro
+```
+```
+{
+    "titulo":"Atlas de México xD",
+    "autor":"SEP",
+    "editorial":"SEP",
+    "anio":"2000"
+}
+```
+### Para actualizar una libro:
+POST
+```
+http://localhost:8084/libros/actualizarLibro
+```
+```
+{
+    "id":"1",
+    "titulo":"Atlas de México",
+    "autor":"SEP",
+    "editorial":"SEP",
+    "anio":"2000"
+}
+```
+### Para eliminar una libro:
+POST
+```
+http://localhost:8084/libros/eliminarLibro
+```
+```
+{
+    "id":"1"
+}
+```
+### Para obtener una libro por Autor: 
+POST
+```
+http://localhost:8084/libros/obtenerLibroPorAutor
+```
+```
+{
+    "autor":"SEP"
 }
 ```
