@@ -18,16 +18,8 @@ const Libro = (sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
-        fecha_publicacion: {
-            type: Sequelize.DATE,
-            allowNull: false
-        },
-        cantidad: {
+        anio: {
             type: Sequelize.INTEGER,
-            allowNull: false
-        },
-        precio: {
-            type: Sequelize.FLOAT,
             allowNull: false
         }
     })

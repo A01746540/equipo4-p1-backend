@@ -15,7 +15,7 @@ const modelDefiners = [
     require('../models/libros'),
     require('../models/listas_reproduccion'),
     require('../models/lista_canciones'),
-    require('../models/lista_libros'),
+    require('../models/lista_libros')
 ]
 
 for (const modelDefiner of modelDefiners) {

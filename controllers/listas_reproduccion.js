@@ -1,11 +1,11 @@
 const path = require('path')
-const ListaReproduccion = require('../utils/database').models.lista_reproduccion
+const ListaReproduccion = require('../utils/database').models.lista_reproducion
 
 exports.postAgregarListaReproduccion = (req, res) => {
     ListaReproduccion.create({
         nombre: req.body.nombre,
         privada: req.body.privada,
-        usuario_id: req.user.id
+        usuario_id: req.body.id
     }).then(lista => {
         res.send(lista)
     })
@@ -14,7 +14,7 @@ exports.postAgregarListaReproduccion = (req, res) => {
 exports.getListasReproduccion = (req, res) => {
     ListaReproduccion.findAll({
         where: {
-            usuario_id: req.user.id
+            usuario_id: req.body.id
         }
     }).then(listas => {
         res.send(listas)
@@ -24,7 +24,7 @@ exports.getListasReproduccion = (req, res) => {
 exports.getListaReproduccion = (req, res) => {
     ListaReproduccion.findOne({
         where: {
-            id: req.params.id
+            id: req.body.id
         }
     }).then(lista => {
         res.send(lista)
@@ -34,7 +34,7 @@ exports.getListaReproduccion = (req, res) => {
 exports.getListasReproduccionUsuario = (req, res) => {
     ListaReproduccion.findAll({
         where: {
-            usuario_id: req.params.id
+            usuario_id: req.body.id
         }
     }).then(listas => {
         res.send(listas)
@@ -47,7 +47,7 @@ exports.postActualizarListaReproduccion = (req, res) => {
         privada: req.body.privada
     }, {
         where: {
-            id: req.params.id
+            id: req.body.id
         }
     }).then(lista => {
         res.send(lista)
@@ -57,7 +57,7 @@ exports.postActualizarListaReproduccion = (req, res) => {
 exports.postEliminarListaReproduccion = (req, res) => {
     ListaReproduccion.destroy({
         where: {
-            id: req.params.id
+            id: req.body.id
         }
     }).then(lista => {
         res.send(lista)

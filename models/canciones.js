@@ -37,4 +37,4 @@ const Cancion = (sequelize) => {
         }
     })
 }
-module.exports = Cancion;
+module.exports = Cancion

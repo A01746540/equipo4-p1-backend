@@ -1,5 +1,5 @@
 const express = require("express")
-const listaReproduccionController = require('../controllers/lista_reproduccion')
+const listaReproduccionController = require('../controllers/listas_reproduccion')
 const router = express.Router()
 
 router.get('/obtenerListasReproduccion', listaReproduccionController.getListasReproduccion)

@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const ListaReproduccion = (sequelize) => {
-    sequelize.define('lista_reproduccion', {
+    sequelize.define('lista_reproducion', {
         id: {
             type: Sequelize.INTEGER,
             primaryKey: true,
@@ -13,7 +13,7 @@ const ListaReproduccion = (sequelize) => {
             type: Sequelize.STRING
         },
         tipo_elemento: {
-            type: Sequelize.BINARY //1: cancion, 2: libro
+            type: Sequelize.BOOLEAN
         },
         fecha_creacion: {
             type: Sequelize.DATE
@@ -26,4 +26,4 @@ const ListaReproduccion = (sequelize) => {
         }
     })
 }
-module.exports = ListaReproduccion
+module.exports = ListaReproduccion;

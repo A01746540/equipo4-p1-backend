@@ -4,7 +4,7 @@ const ListaLibro = require('../utils/database').models.lista_libros
 exports.postAgregarListaLibros = (req, res) => {
     ListaLibro.create({
         nombre: req.body.nombre,
-        id_usuario: req.user.id
+        id_usuario: req.body.id
     }).then(lista => {
         res.json(lista)
     })
@@ -13,7 +13,7 @@ exports.postAgregarListaLibros = (req, res) => {
 exports.getListaLibros = (req, res) => {
     ListaLibro.findAll({
         where: {
-            id_usuario: req.user.id
+            id_usuario: req.body.id
         }
     }).then(listas => {
         res.json(listas)
@@ -24,7 +24,7 @@ exports.getListaLibros = (req, res) => {
 exports.getCuandoListas = (req, res) => {
     ListaLibro.findAll({
         where: {
-            id_lista: req.params.id_lista
+            id_lista: req.body.id_lista
         }
     }).then(canciones => {
         res.json(canciones)
@@ -35,7 +35,7 @@ exports.getCuandoListas = (req, res) => {
 exports.getCuandoLibros = (req, res) => {
     ListaLibro.findAll({
         where: {
-            id_cancion: req.params.id_cancion
+            id_cancion: req.body.id_cancion
         }
     }).then(listas => {
         res.json(listas)
@@ -47,7 +47,7 @@ exports.postActualizarListaLibros = (req, res) => {
         nombre: req.body.nombre
     }, {
         where: {
-            id: req.params.id
+            id: req.body.id
         }
     }).then(lista => {
         res.json(lista)
@@ -57,7 +57,7 @@ exports.postActualizarListaLibros = (req, res) => {
 exports.postBorrarListaLibros = (req, res) => {
     ListaLibro.destroy({
         where: {
-            id: req.params.id
+            id: req.body.id
         }
     }).then(lista => {
         res.json(lista)

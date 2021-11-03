@@ -8,9 +8,16 @@ function aplicarRelaciones(sequelize) {
     const ListaLibro = sequelize.models.lista_libros
 
     //Un videojuego puedes jugarse en muchas consolas
-    Cancion.belongsToMany(ListaReproduccion, { through: ListaCancion });
-    //Una consola tiene muchos videojuegos
-    Libro.belongsToMany(ListaReproduccion, { through: ListaLibro });
+    Cancion.associate = function(models) {
+        Cancion.belongsToMany(ListaReproduccion, { through: ListaCancion });
+    };
+    Libro.associate = function(models) {
+        Libro.belongsToMany(ListaReproduccion, { through: ListaLibro });
+    };
+    // ListaReproduccion.belongsToMany(Cancion, { through: ListaCancion });
+    // //Una consola tiene muchos videojuegos
+    // ListaReproduccion.belongsToMany(Libro, { through: ListaLibro });
+    // Libro.belongsToMany(ListaReproduccion, { through: ListaLibro });
     //Si tuvieran una relación uno a muchos
     /*Supuesto tene una tabla trofeo  un videojuego 
     puede tener muchos trofeos pero un trofeo solo pertenece a un videojuego    

@@ -7,6 +7,6 @@ router.get('/obtenerLibro', libroController.getLibro)
 router.post('/agregarLibro', libroController.postAgregarLibro)
 router.post('/actualizarLibro', libroController.postActualizarLibro)
 router.post('/eliminarLibro', libroController.postBorrarLibro)
-router.get('/obtenerLibroPorAutor', libroController.getLibrosPorAutor)
+router.get('/obtenerLibroPorAutor', libroController.getLibroPorAutor)
 
 module.exports = router

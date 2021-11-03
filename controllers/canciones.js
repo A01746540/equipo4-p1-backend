@@ -1,5 +1,5 @@
 const path = require('path')
-const Cancion = require('../utils/database').models.canciones
+const Cancion = require('../utils/database').models.cancion
 
 exports.postAgregarCancion = (req, res) => {
     console.log(req.body)
@@ -26,7 +26,7 @@ exports.getCanciones = (req, res) => {
 }
 
 exports.getCancion = (req, res) => {
-    Cancion.findOne({ where: { id: req.params.id } })
+    Cancion.findOne({ where: { id: req.body.id } })
         .then(cancion => {
             res.json(cancion)
         })
@@ -37,7 +37,7 @@ exports.getCancion = (req, res) => {
 }
 
 exports.getCancionesPorTitulo = (req, res) => {
-    Cancion.findAll({ where: { titulo: req.params.titulo } })
+    Cancion.findAll({ where: { titulo: req.body.titulo } })
         .then(canciones => {
             res.json(canciones)
         })
@@ -48,7 +48,7 @@ exports.getCancionesPorTitulo = (req, res) => {
 }
 
 exports.getCancionesPorArtista = (req, res) => {
-    Cancion.findAll({ where: { artista: req.params.artista } })
+    Cancion.findAll({ where: { artista: req.body.artista } })
         .then(canciones => {
             res.json(canciones)
         })
@@ -59,7 +59,7 @@ exports.getCancionesPorArtista = (req, res) => {
 }
 
 exports.getCancionesPorAlbum = (req, res) => {
-    Cancion.findAll({ where: { album: req.params.album } })
+    Cancion.findAll({ where: { album: req.body.album } })
         .then(canciones => {
             res.json(canciones)
         })
@@ -70,7 +70,7 @@ exports.getCancionesPorAlbum = (req, res) => {
 }
 
 exports.getCancionesPorGenero = (req, res) => {
-    Cancion.findAll({ where: { genero: req.params.genero } })
+    Cancion.findAll({ where: { genero: req.body.genero } })
         .then(canciones => {
             res.json(canciones)
         })
@@ -81,7 +81,7 @@ exports.getCancionesPorGenero = (req, res) => {
 }
 
 exports.postActualizarCancion = (req, res) => {
-    Cancion.update(req.body, { where: { id: req.params.id } })
+    Cancion.update(req.body, { where: { id: req.body.id } })
         .then(con => {
             console.log("Canción actualizada exitosamente")
             res.json({ estado: "Canción actualizada exitosamente" })
@@ -93,7 +93,7 @@ exports.postActualizarCancion = (req, res) => {
 }
 
 exports.postEliminarCancion = (req, res) => {
-    Cancion.destroy({ where: { id: req.params.id } })
+    Cancion.destroy({ where: { id: req.body.id } })
         .then(con => {
             console.log("Canción eliminada exitosamente")
             res.json({ estado: "Canción eliminada exitosamente" })
