@@ -290,7 +290,43 @@ http://localhost:8084/listareproduccion/eliminarListasReproduccion
 }
 ```
 ### Para ENLACE LISTAS-CANCIONES
-
+Antes de empezar estas pruebas debes crear una canción, un libro y una lista de reproduccion en caso de que los hayas eliminado
+```
+http://localhost:8084/canciones/agregarCancion
+```
+```
+{
+    "titulo":"Asinanona",
+    "duracion":"120",
+    "album":"Asinanona",
+    "artista":"Redimi2",
+    "genero":"rap",
+    "anio":"2019",
+    "imagen":"asnsakjsa"
+}
+```
+```
+http://localhost:8084/libros/agregarLibro
+```
+```
+{
+    "titulo":"Atlas de México xD",
+    "autor":"SEP",
+    "editorial":"SEP",
+    "anio":"2000"
+}
+```
+```
+http://localhost:8084/listareproduccion/agregarListasReproduccion
+```
+```
+{
+    "nombre":"Muusica Para Salvar el Semestre",
+    "descripcion":"Esta playlist se usa cuando necesitas salvar el semestre",
+    "tipo_elemento":"0",
+    "usuario_name":"Maxine"
+}
+```
 ### Para agregar un ENLACE LISTAS-CANCIONES:
 POST
 ```
@@ -315,6 +351,13 @@ http://localhost:8084/listacanciones/agregarListaCancion
     "id_cancion":"1"
 }
 ```
+Si ejecuto todas las pruebas en orden seguramente dará error y deberá probar con id_lista = 2 y id_canción = 2, aplica lo mismo para el resto de funciones
+```
+{
+    "id_lista":"2",
+    "id_cancion":"2"
+}
+```
 ### Para obtener los enlaces LISTAS-CANCIONES:
 GET
 ```
@@ -335,6 +378,11 @@ http://localhost:8084/listacanciones/obtenerListaCancionPorLista
     "id_lista":"1"
 }
 ```
+```
+{
+    "id_lista":"2"
+}
+```
 ### Para obtener TODAS LAS LISTAS de una canción:
 GET
 ```
@@ -343,6 +391,11 @@ http://localhost:8084/listacanciones/obtenerListaCancionPorCancion
 ```
 {
     "id_cancion":"1"
+}
+```
+```
+{
+    "id_cancion":"2"
 }
 ```
 ### Para actualizar ENLACE LISTAS-CANCIONES:
@@ -371,6 +424,13 @@ http://localhost:8084/listacanciones/actualizarListaCancion
     "id_cancion":"1"
 }
 ```
+```
+{
+    "id":"1",
+    "id_lista":"2",
+    "id_cancion":"2"
+}
+```
 ### Para eliminar ENLACES LISTAS-CANCIONES por id de la lista:
 POST
 ```
@@ -379,6 +439,11 @@ http://localhost:8084/listacanciones/eliminarListaCancion
 ```
 {
     "id_lista":"1",
+}
+```
+```
+{
+    "id_lista":"2",
 }
 ```
 ### Para ENLACE LISTAS-LIBROS
@@ -407,6 +472,13 @@ http://localhost:8084/listalibros/agregarListaLibro
     "id_libro":"1"
 }
 ```
+Si ejecuto todas las pruebas en orden seguramente dará error y deberá probar con id_lista = 2 y id_libro = 2, aplica lo mismo para el resto de funciones
+```
+{
+    "id_lista":"2",
+    "id_libro":"2"
+}
+```
 ### Para obtener los enlaces LISTAS-LIBROS:
 GET
 ```
@@ -427,6 +499,11 @@ http://localhost:8084/listalibros/obtenerListaLibroPorLista
     "id_lista":"1"
 }
 ```
+```
+{
+    "id_lista":"2"
+}
+```
 ### Para obtener TODAS LAS LISTAS de una libro:
 GET
 ```
@@ -435,6 +512,11 @@ http://localhost:8084/listalibros/obtenerListaLibroPorLibro
 ```
 {
     "id_libro":"1"
+}
+```
+```
+{
+    "id_libro":"2"
 }
 ```
 ### Para actualizar ENLACE LISTAS-LIBROS:
@@ -463,6 +545,13 @@ http://localhost:8084/listalibros/actualizarListaLibro
     "id_libro":"1"
 }
 ```
+```
+{
+    "id":"1",
+    "id_lista":"2",
+    "id_libro":"2"
+}
+```
 ### Para eliminar ENLACES LISTAS-LIBROS por id de la lista:
 POST
 ```
@@ -471,5 +560,10 @@ http://localhost:8084/listalibros/eliminarListaLibro
 ```
 {
     "id_lista":"1",
+}
+```
+```
+{
+    "id_lista":"2",
 }
 ```
