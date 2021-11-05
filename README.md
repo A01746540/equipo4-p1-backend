@@ -286,7 +286,7 @@ http://localhost:8084/listareproduccion/eliminarListasReproduccion
 ```
 ```
 {
-     "usuario_name":"Maxine"
+     "id":"1"
 }
 ```
 ### Para ENLACE LISTAS-CANCIONES
