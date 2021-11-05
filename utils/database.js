@@ -10,6 +10,8 @@ const sequelize = new Sequelize('AlexisyMaxine', 'user4', 'root', {
     }
 })
 
+// mysql -u  user4 -p
+
 const modelDefiners = [
     require('../models/canciones'),
     require('../models/libros'),

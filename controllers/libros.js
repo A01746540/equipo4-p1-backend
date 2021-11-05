@@ -1,15 +1,46 @@
 const path = require('path')
 const Libro = require('../utils/database').models.libro
 
+exports.postAgregarLibro = (req, res) => {
+    Libro.findOne({ where: { titulo: req.body.titulo } })
+        .then(libro => {
+            if (libro) {
+                console.log("Libro ya existe")
+                res.json({ estado: "Libro ya existe" })
+            } else {
+                Libro.create(req.body)
+                    .then(con => {
+                        console.log("Libro agregado exitosamente")
+                        res.json({ estado: "Libro agregado exitosamente" })
+                    })
+                    .catch(err => {
+                        console.log(err)
+                        res.json({ estado: "Error al agregar libro" })
+                    })
+            }
+        })
+        .catch(err => {
+            console.log(err)
+            res.json({ estado: "Error al obtener libro" })
+        })
+}
+
 exports.getLibros = (req, res) => {
     Libro.findAll()
-        .then(libros => res.send(libros))
-        .catch(err => res.send(err))
+        .then(libros => {
+            console.log("Libros obtenidos exitosamente")
+            res.json(libros)
+        })
+        .catch(err => {
+            console.log(err)
+            res.json({ estado: "Error al obtener libros" })
+        })
 }
 
 exports.getLibro = (req, res) => {
     Libro.findOne({ where: { id: req.body.id } })
         .then(libro => {
+            console.log("Libro obtenido exitosamente")
             res.json(libro)
         })
         .catch(err => {
@@ -18,16 +49,19 @@ exports.getLibro = (req, res) => {
         })
 }
 
-exports.postAgregarLibro = (req, res) => {
-    console.log(req.body)
-    Libro.create(req.body)
-        .then(con => {
-            console.log("Libro agregado exitosamente")
-            res.json({ estado: "Libro agregado exitosamente" })
+exports.getLibroPorAutor = (req, res) => {
+    Libro.findAll({
+            where: {
+                autor: req.body.autor
+            }
+        })
+        .then(libros => {
+            console.log("Libros obtenidos exitosamente")
+            res.json(libros)
         })
         .catch(err => {
             console.log(err)
-            res.json({ estado: "Error al agregar libro" })
+            res.json({ estado: "Error al obtener libros por autor" })
         })
 }
 
@@ -56,20 +90,5 @@ exports.postBorrarLibro = (req, res) => {
         .catch(err => {
             console.log(err)
             res.json({ estado: "Error al eliminar libro" })
-        })
-}
-
-exports.getLibroPorAutor = (req, res) => {
-    Libro.findAll({
-            where: {
-                autor: req.body.autor
-            }
-        })
-        .then(libros => {
-            res.json(libros)
-        })
-        .catch(err => {
-            console.log(err)
-            res.json({ estado: "Error al obtener libros por autor" })
         })
 }

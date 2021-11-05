@@ -2,16 +2,21 @@ const path = require('path')
 const Cancion = require('../utils/database').models.cancion
 
 exports.postAgregarCancion = (req, res) => {
-    console.log(req.body)
-    Cancion.create(req.body)
-        .then(con => {
-            console.log("Canción agregada exitosamente")
-            res.json({ estado: "Canción agregada exitosamente" })
-        })
-        .catch(err => {
-            console.log(err)
-            res.json({ estado: "Error al agregar canción" })
-        })
+    Cancion.findOne({ where: { titulo: req.body.titulo } }).then(cancion => {
+        if (cancion) {
+            res.status(400).send({ error: 'Ya existe una canción con ese nombre' })
+        } else {
+            Cancion.create(req.body)
+                .then(con => {
+                    console.log("Canción agregada exitosamente")
+                    res.json({ estado: "Canción agregada exitosamente" })
+                })
+                .catch(err => {
+                    console.log(err)
+                    res.json({ estado: "Error al agregar canción" })
+                })
+        }
+    })
 }
 
 exports.getCanciones = (req, res) => {

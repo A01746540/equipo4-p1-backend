@@ -7,22 +7,20 @@ const ListaReproduccion = (sequelize) => {
             autoIncrement: true
         },
         nombre: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
+            allowNull: false
         },
         descripcion: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
+            allowNull: false
         },
         tipo_elemento: {
-            type: Sequelize.BOOLEAN
+            type: Sequelize.BOOLEAN,
+            allowNull: false
         },
-        fecha_creacion: {
-            type: Sequelize.DATE
-        },
-        fecha_modificacion: {
-            type: Sequelize.DATE
-        },
-        usuario_id: {
-            type: Sequelize.INTEGER
+        usuario_name: {
+            type: Sequelize.STRING,
+            allowNull: false
         }
     })
 }
