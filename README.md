@@ -438,12 +438,12 @@ http://localhost:8084/listacanciones/eliminarListaCancion
 ```
 ```
 {
-    "id_lista":"1",
+    "id_lista":"1"
 }
 ```
 ```
 {
-    "id_lista":"2",
+    "id_lista":"2"
 }
 ```
 ### Para ENLACE LISTAS-LIBROS
@@ -559,11 +559,11 @@ http://localhost:8084/listalibros/eliminarListaLibro
 ```
 ```
 {
-    "id_lista":"1",
+    "id_lista":"1"
 }
 ```
 ```
 {
-    "id_lista":"2",
+    "id_lista":"2"
 }
 ```
