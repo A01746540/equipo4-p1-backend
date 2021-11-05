@@ -127,6 +127,32 @@ http://localhost:8084/canciones/eliminarCancion
 ```
 ### Para LIBROS
 
+### Para agregar una libro:
+POST
+```
+validaciones:
+Campo	        Validación
+titulo	        Debe ser un string
+autor   	    Debe ser un entero
+editorial       Debe ser un string
+anio            Debe ser un string
+
+errores:
+Código          Mensaje
+Error	        Libro ya existe
+Error       	Error al agregar libro
+```
+```
+http://localhost:8084/libros/agregarLibro
+```
+```
+{
+    "titulo":"Atlas de México xD",
+    "autor":"SEP",
+    "editorial":"SEP",
+    "anio":"2000"
+}
+```
 ### Para obtener libros:
 GET
 ```
@@ -147,17 +173,14 @@ http://localhost:8084/libros/obtenerLibro
     "id":"1"
 }
 ```
-### Para agregar una libro:
+### Para obtener una libro por Autor: 
 POST
 ```
-http://localhost:8084/libros/agregarLibro
+http://localhost:8084/libros/obtenerLibroPorAutor
 ```
 ```
 {
-    "titulo":"Atlas de México xD",
-    "autor":"SEP",
-    "editorial":"SEP",
-    "anio":"2000"
+    "autor":"SEP"
 }
 ```
 ### Para actualizar una libro:
@@ -182,16 +205,6 @@ http://localhost:8084/libros/eliminarLibro
 ```
 {
     "id":"1"
-}
-```
-### Para obtener una libro por Autor: 
-POST
-```
-http://localhost:8084/libros/obtenerLibroPorAutor
-```
-```
-{
-    "autor":"SEP"
 }
 ```
 ### Para LISTAS DE REPRODUCCIÓN
