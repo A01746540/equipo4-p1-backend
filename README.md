@@ -59,7 +59,7 @@ http://localhost:8084/canciones/obtenerCancion
 }
 ```
 ### Para obtener una canción por título: 
-POST
+GET
 ```
 http://localhost:8084/canciones/obtenerCancionPorTitulo
 ```
@@ -69,7 +69,7 @@ http://localhost:8084/canciones/obtenerCancionPorTitulo
 }
 ```
 ### Para obtener una canción por artista: 
-POST
+GET
 ```
 http://localhost:8084/canciones/obtenerCancionPorArtista
 ```
@@ -79,17 +79,17 @@ http://localhost:8084/canciones/obtenerCancionPorArtista
 }
 ```
 ### Para obtener una canción por álbum: 
-POST
+GET
 ```
 http://localhost:8084/canciones/obtenerCancionPorAlbum
 ```
 ```
-
+{
     "album":"Asinanona"
 }
 ```
 ### Para obtener una canción por género: 
-POST
+GET
 ```
 http://localhost:8084/canciones/obtenerCancionPorGenero
 ```
@@ -174,7 +174,7 @@ http://localhost:8084/libros/obtenerLibro
 }
 ```
 ### Para obtener una libro por Autor: 
-POST
+GET
 ```
 http://localhost:8084/libros/obtenerLibroPorAutor
 ```
