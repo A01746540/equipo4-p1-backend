@@ -229,7 +229,7 @@ http://localhost:8084/listareproduccion/agregarListasReproduccion
 ```
 ```
 {
-    "nombre":"Musica Para Salvar el Semestre",
+    "nombre":"Muusica Para Salvar el Semestre",
     "descripcion":"Esta playlist se usa cuando necesitas salvar el semestre",
     "tipo_elemento":"0",
     "usuario_name":"Maxine"
@@ -262,7 +262,7 @@ http://localhost:8084/listareproduccion/obtenerListasReproduccionPorUsuario
 ```
 ```
 {
-
+     "usuario_name":"Maxine"
 }
 ```
 ### Para actualizar listas de reproducción:
