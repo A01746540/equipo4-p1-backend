@@ -110,7 +110,6 @@ http://localhost:8084/canciones/obtenerCancionPorGenero
 }
 ```
 
-
 ### Para LIBROS
 
 ### Para obtener libros:
@@ -178,5 +177,74 @@ http://localhost:8084/libros/obtenerLibroPorAutor
 ```
 {
     "autor":"SEP"
+}
+```
+### Para LISTAS DE REPRODUCCIÓN
+
+### Para obtener una lista de reproducción:
+GET
+```
+http://localhost:8084/listareproduccion/obtenerListaReproduccion
+```
+```
+{
+    "nombre":"Muusica Para Salvar el Semestre"
+}
+```
+### Para obtener listas de reproducción:
+GET
+```
+http://localhost:8084/listareproduccion/obtenerListasReproduccion
+```
+```
+{
+
+}
+```
+### Para agregar listas de reproducción:
+POST
+```
+http://localhost:8084/listareproduccion/agregarListasReproduccion
+```
+```
+{
+    "nombre":"Musica Para Salvar el Semestre",
+    "descripcion":"Esta playlist se usa cuando necesitas salvar el semestre",
+    "tipo_elemento":"0",
+    "usuario_name":"Maxine"
+}
+```
+### Para actualizar listas de reproducción:
+POST
+```
+http://localhost:8084/listareproduccion/actualizarListasReproduccion
+```
+```
+{
+    "id":"1",
+    "nombre":"Musica Para Salvar el Semestre",
+    "descripcion":"Esta playlist se usa cuando necesitas salvar el semestre",
+    "tipo_elemento":"0",
+    "usuario_name":"Maxine"
+}
+```
+### Para eliminar listas de reproducción:
+POST
+```
+http://localhost:8084/listareproduccion/eliminarListasReproduccion
+```
+```
+{
+
+}
+```
+### Para obtener listas de reproducción por usuario:
+GET
+```
+http://localhost:8084/listareproduccion/obtenerListasReproduccionPorUsuario
+```
+```
+{
+
 }
 ```
