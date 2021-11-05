@@ -6,28 +6,22 @@
 
 ### Para CANCIONES
 
-### Para obtener canciones:
-GET
-```
-http://localhost:8084/canciones/obtenerCanciones
-```
-```
-{
-
-}
-```
-### Para obtener una sola canción:
-GET
-```
-http://localhost:8084/canciones/obtenerCancion
-```
-```
-{
-    "id":"1"
-}
-```
 ### Para agregar una canción:
 POST
+validaciones:
+Campo	        Validación
+titulo	        Debe ser un string
+duracion	    Debe ser un entero
+album	        Debe ser un string
+artista	        Debe ser un string
+genero	        Debe ser un string
+anio            Debe ser un entero
+imagen	        Debe ser un string
+
+errores:
+Código          Mensaje
+Error	        Ya existe una canción con ese nombre
+Error       	Error al agregar canción
 ```
 http://localhost:8084/canciones/agregarCancion
 ```
@@ -42,27 +36,20 @@ http://localhost:8084/canciones/agregarCancion
     "imagen":"asnsakjsa"
 }
 ```
-### Para actualizar una canción:
-POST
+### Para obtener canciones:
+GET
 ```
-http://localhost:8084/canciones/actualizarCancion
+http://localhost:8084/canciones/obtenerCanciones
 ```
 ```
 {
-    "id":"1",
-    "titulo":"Asinanona",
-    "duracion":"120",
-    "album":"Asinanona",
-    "artista":"Redimi2",
-    "genero":"rap",
-    "anio":"2020",
-    "imagen":"asnsakjsa"
+
 }
 ```
-### Para eliminar una canción:
-POST
+### Para obtener una sola canción:
+GET
 ```
-http://localhost:8084/canciones/eliminarCancion
+http://localhost:8084/canciones/obtenerCancion
 ```
 ```
 {
@@ -109,7 +96,33 @@ http://localhost:8084/canciones/obtenerCancionPorGenero
     "genero":"rap"
 }
 ```
-
+### Para actualizar una canción:
+POST
+```
+http://localhost:8084/canciones/actualizarCancion
+```
+```
+{
+    "id":"1",
+    "titulo":"Asinanona",
+    "duracion":"120",
+    "album":"Asinanona",
+    "artista":"Redimi2",
+    "genero":"rap",
+    "anio":"2020",
+    "imagen":"asnsakjsa"
+}
+```
+### Para eliminar una canción:
+POST
+```
+http://localhost:8084/canciones/eliminarCancion
+```
+```
+{
+    "id":"1"
+}
+```
 ### Para LIBROS
 
 ### Para obtener libros:
