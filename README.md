@@ -289,3 +289,187 @@ http://localhost:8084/listareproduccion/eliminarListasReproduccion
      "usuario_name":"Maxine"
 }
 ```
+### Para ENLACE LISTAS-CANCIONES
+
+### Para agregar un ENLACE LISTAS-CANCIONES:
+POST
+```
+validaciones:
+Campo	        Validación
+id_lista	    Debe ser un entero
+id_cancion      Debe ser un entero
+
+errores:
+Código          Mensaje
+Error	        Error al crear lista de canciones
+Error       	La lista de reproduccion no existe
+Error       	Error al buscar lista de reproduccion
+Error       	Error al buscar cancion
+```
+```
+http://localhost:8084/listacanciones/agregarListaCancion
+```
+```
+{
+    "id_lista":"1",
+    "id_cancion":"1"
+}
+```
+### Para obtener los enlaces LISTAS-CANCIONES:
+GET
+```
+http://localhost:8084/listacanciones/obtenerListasCancion
+```
+```
+{
+
+}
+```
+### Para obtener TODAS LAS CANCIONES de una lista:
+GET
+```
+http://localhost:8084/listacanciones/obtenerListaCancionPorLista
+```
+```
+{
+    "id_lista":"1"
+}
+```
+### Para obtener TODAS LAS LISTAS de una canción:
+GET
+```
+http://localhost:8084/listacanciones/obtenerListaCancionPorCancion
+```
+```
+{
+    "id_cancion":"1"
+}
+```
+### Para actualizar ENLACE LISTAS-CANCIONES:
+POST
+```
+validaciones:
+Campo	        Validación
+id              Debe ser un entero
+id_lista	    Debe ser un entero
+id_cancion      Debe ser un entero
+
+errores:
+Código          Mensaje
+Error	        Error al actualizar lista de canciones
+Error       	La lista de reproduccion no existe
+Error       	Error al buscar lista de reproduccion
+Error       	Error al buscar cancion
+```
+```
+http://localhost:8084/listacanciones/actualizarListaCancion
+```
+```
+{
+    "id":"1",
+    "id_lista":"1",
+    "id_cancion":"1"
+}
+```
+### Para eliminar ENLACES LISTAS-CANCIONES por id de la lista:
+POST
+```
+http://localhost:8084/listacanciones/eliminarListaCancion
+```
+```
+{
+    "id_lista":"1",
+}
+```
+### Para ENLACE LISTAS-LIBROS
+
+### Para agregar un ENLACE LISTAS-LIBROS:
+POST
+```
+validaciones:
+Campo	        Validación
+id_lista	    Debe ser un entero
+id_libro        Debe ser un entero
+
+errores:
+Código          Mensaje
+Error	        Error al crear lista de libros
+Error       	La lista de reproduccion no existe
+Error       	Error al buscar lista de reproduccion
+Error       	Error al buscar libro
+```
+```
+http://localhost:8084/listalibros/agregarListaLibro
+```
+```
+{
+    "id_lista":"1",
+    "id_libro":"1"
+}
+```
+### Para obtener los enlaces LISTAS-LIBROS:
+GET
+```
+http://localhost:8084/listalibros/obtenerListasLibro
+```
+```
+{
+
+}
+```
+### Para obtener TODOS LOS LIBROS de una lista:
+GET
+```
+http://localhost:8084/listalibros/obtenerListaLibroPorLista
+```
+```
+{
+    "id_lista":"1"
+}
+```
+### Para obtener TODAS LAS LISTAS de una libro:
+GET
+```
+http://localhost:8084/listalibros/obtenerListaLibroPorLibro
+```
+```
+{
+    "id_libro":"1"
+}
+```
+### Para actualizar ENLACE LISTAS-LIBROS:
+POST
+```
+validaciones:
+Campo	        Validación
+id              Debe ser un entero
+id_lista	    Debe ser un entero
+id_libro        Debe ser un entero
+
+errores:
+Código          Mensaje
+Error	        Error al actualizar lista de libros
+Error       	La lista de reproduccion no existe
+Error       	Error al buscar lista de reproduccion
+Error       	Error al buscar libro
+```
+```
+http://localhost:8084/listalibros/actualizarListaLibro
+```
+```
+{
+    "id":"1",
+    "id_lista":"1",
+    "id_libro":"1"
+}
+```
+### Para eliminar ENLACES LISTAS-LIBROS por id de la lista:
+POST
+```
+http://localhost:8084/listalibros/eliminarListaLibro
+```
+```
+{
+    "id_lista":"1",
+}
+```
