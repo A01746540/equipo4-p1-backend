@@ -8,6 +8,7 @@
 
 ### Para agregar una canción:
 POST
+```
 validaciones:
 Campo	        Validación
 titulo	        Debe ser un string
@@ -22,6 +23,7 @@ errores:
 Código          Mensaje
 Error	        Ya existe una canción con ese nombre
 Error       	Error al agregar canción
+```
 ```
 http://localhost:8084/canciones/agregarCancion
 ```
