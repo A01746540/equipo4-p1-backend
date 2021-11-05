@@ -133,9 +133,9 @@ POST
 validaciones:
 Campo	        Validación
 titulo	        Debe ser un string
-autor   	    Debe ser un entero
+autor   	    Debe ser un string
 editorial       Debe ser un string
-anio            Debe ser un string
+anio            Debe ser un entero
 
 errores:
 Código          Mensaje
@@ -209,14 +209,30 @@ http://localhost:8084/libros/eliminarLibro
 ```
 ### Para LISTAS DE REPRODUCCIÓN
 
-### Para obtener una lista de reproducción:
-GET
+### Para agregar listas de reproducción:
+POST
 ```
-http://localhost:8084/listareproduccion/obtenerListaReproduccion
+validaciones:
+Campo	        Validación
+nombre	        Debe ser un string
+descripcion     Debe ser un entero
+tipo_elemento   Debe ser un string
+usuario_name    Debe ser un string
+
+errores:
+Código          Mensaje
+Error	        Ya existe una lista con ese nombre
+Error       	Error al agregar lista de reproduccion
+```
+```
+http://localhost:8084/listareproduccion/agregarListasReproduccion
 ```
 ```
 {
-    "nombre":"Muusica Para Salvar el Semestre"
+    "nombre":"Musica Para Salvar el Semestre",
+    "descripcion":"Esta playlist se usa cuando necesitas salvar el semestre",
+    "tipo_elemento":"0",
+    "usuario_name":"Maxine"
 }
 ```
 ### Para obtener listas de reproducción:
@@ -229,17 +245,24 @@ http://localhost:8084/listareproduccion/obtenerListasReproduccion
 
 }
 ```
-### Para agregar listas de reproducción:
-POST
+### Para obtener una lista de reproducción:
+GET
 ```
-http://localhost:8084/listareproduccion/agregarListasReproduccion
+http://localhost:8084/listareproduccion/obtenerListaReproduccion
 ```
 ```
 {
-    "nombre":"Musica Para Salvar el Semestre",
-    "descripcion":"Esta playlist se usa cuando necesitas salvar el semestre",
-    "tipo_elemento":"0",
-    "usuario_name":"Maxine"
+    "nombre":"Muusica Para Salvar el Semestre"
+}
+```
+### Para obtener listas de reproducción por usuario:
+GET
+```
+http://localhost:8084/listareproduccion/obtenerListasReproduccionPorUsuario
+```
+```
+{
+
 }
 ```
 ### Para actualizar listas de reproducción:
@@ -263,16 +286,6 @@ http://localhost:8084/listareproduccion/eliminarListasReproduccion
 ```
 ```
 {
-
-}
-```
-### Para obtener listas de reproducción por usuario:
-GET
-```
-http://localhost:8084/listareproduccion/obtenerListasReproduccionPorUsuario
-```
-```
-{
-
+     "usuario_name":"Maxine"
 }
 ```
